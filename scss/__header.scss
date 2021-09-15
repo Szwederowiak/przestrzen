@@ -1,0 +1,98 @@
+.site-header {
+  background: $color-primary;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-family: $font-secondary;
+    font-size: 2rem;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+
+  &__item {
+    padding: 0 20px;
+  }
+
+  &__icon {
+    fill: $color-light;
+  }
+}
+
+.site-menu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  list-style: none;
+  position: relative;
+  box-shadow: 0 7px 16px -10px rgba(50, 50, 50, 0.6);
+  display: none;
+
+  &.active {
+      display: flex;
+  }
+
+  &::after {
+    content: "";
+    width: 70%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    background: rgba($color-accent, 0.2);
+  }
+  &__item::hover {
+    background: rgba(#000, 0.05);
+  }
+
+  &__link {
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  &__item:last-child {
+    .site-menu__link {
+      padding-bottom: 30px;
+    }
+  }
+  &__item:first-child {
+    .site-menu__link {
+      padding-top: 30px;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 0 0 0 120px;
+
+    border: none;
+    background: $color-accent;
+    color: $color-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .material-icons-outlined {
+        position: absolute;
+        top: 5px;
+        right: 7px;
+        font-size: 26px;
+    }
+  }
+}
